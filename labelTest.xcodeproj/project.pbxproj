@@ -14,6 +14,7 @@
 		D19D93581EADE129003C5F3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D19D93571EADE129003C5F3F /* Assets.xcassets */; };
 		D19D935B1EADE129003C5F3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D19D93591EADE129003C5F3F /* LaunchScreen.storyboard */; };
 		D19D93641EADE179003C5F3F /* LayoutLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D19D93631EADE179003C5F3F /* LayoutLabel.m */; };
+		D19D936B1EAF2BFD003C5F3F /* Simulator Screen Shot 2017年4月25日 下午2.56.35.png in Resources */ = {isa = PBXBuildFile; fileRef = D19D936A1EAF2BFD003C5F3F /* Simulator Screen Shot 2017年4月25日 下午2.56.35.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		D19D935C1EADE129003C5F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D19D93621EADE179003C5F3F /* LayoutLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutLabel.h; sourceTree = "<group>"; };
 		D19D93631EADE179003C5F3F /* LayoutLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutLabel.m; sourceTree = "<group>"; };
+		D19D936A1EAF2BFD003C5F3F /* Simulator Screen Shot 2017年4月25日 下午2.56.35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot 2017年4月25日 下午2.56.35.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				D19D93521EADE129003C5F3F /* ViewController.m */,
 				D19D93621EADE179003C5F3F /* LayoutLabel.h */,
 				D19D93631EADE179003C5F3F /* LayoutLabel.m */,
+				D19D936A1EAF2BFD003C5F3F /* Simulator Screen Shot 2017年4月25日 下午2.56.35.png */,
 				D19D93541EADE129003C5F3F /* Main.storyboard */,
 				D19D93571EADE129003C5F3F /* Assets.xcassets */,
 				D19D93591EADE129003C5F3F /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D19D935B1EADE129003C5F3F /* LaunchScreen.storyboard in Resources */,
+				D19D936B1EAF2BFD003C5F3F /* Simulator Screen Shot 2017年4月25日 下午2.56.35.png in Resources */,
 				D19D93581EADE129003C5F3F /* Assets.xcassets in Resources */,
 				D19D93561EADE129003C5F3F /* Main.storyboard in Resources */,
 			);
@@ -316,6 +320,7 @@
 				D19D93611EADE129003C5F3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
