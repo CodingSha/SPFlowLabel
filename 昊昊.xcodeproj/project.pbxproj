@@ -14,6 +14,7 @@
 		D19D93B81EB086D2003C5F3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D19D93B71EB086D2003C5F3F /* Assets.xcassets */; };
 		D19D93BB1EB086D2003C5F3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D19D93B91EB086D2003C5F3F /* LaunchScreen.storyboard */; };
 		D19D93C41EB0874D003C5F3F /* LayoutLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D19D93C31EB0874D003C5F3F /* LayoutLabel.m */; };
+		D19D93C61EB0AD03003C5F3F /* Simulator Screen Shot 2017年4月26日 下午6.24.25.png in Resources */ = {isa = PBXBuildFile; fileRef = D19D93C51EB0AD03003C5F3F /* Simulator Screen Shot 2017年4月26日 下午6.24.25.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		D19D93BC1EB086D2003C5F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D19D93C21EB0874D003C5F3F /* LayoutLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutLabel.h; sourceTree = "<group>"; };
 		D19D93C31EB0874D003C5F3F /* LayoutLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutLabel.m; sourceTree = "<group>"; };
+		D19D93C51EB0AD03003C5F3F /* Simulator Screen Shot 2017年4月26日 下午6.24.25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot 2017年4月26日 下午6.24.25.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		D19D93AA1EB086D2003C5F3F /* 昊昊 */ = {
 			isa = PBXGroup;
 			children = (
+				D19D93C51EB0AD03003C5F3F /* Simulator Screen Shot 2017年4月26日 下午6.24.25.png */,
 				D19D93AE1EB086D2003C5F3F /* AppDelegate.h */,
 				D19D93AF1EB086D2003C5F3F /* AppDelegate.m */,
 				D19D93C21EB0874D003C5F3F /* LayoutLabel.h */,
@@ -143,6 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D19D93C61EB0AD03003C5F3F /* Simulator Screen Shot 2017年4月26日 下午6.24.25.png in Resources */,
 				D19D93BB1EB086D2003C5F3F /* LaunchScreen.storyboard in Resources */,
 				D19D93B81EB086D2003C5F3F /* Assets.xcassets in Resources */,
 				D19D93B61EB086D2003C5F3F /* Main.storyboard in Resources */,
@@ -316,6 +320,7 @@
 				D19D93C11EB086D2003C5F3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
