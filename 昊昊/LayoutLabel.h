@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LayoutLabel : UIView
-
+@property (nonatomic,assign)CGFloat height;
 /**
  init
 
@@ -27,12 +27,4 @@
                    labelHeight:(CGFloat)Height
                 labelBackColor:(UIColor *)labelBackColor
                 labelTextColor:(UIColor *)textColor;
-
-/**
- 用于计算控件的最终高度
-
- @param labels 需要计算的标签内容集合
- @return instance
- */
-- (CGFloat)getLayoutViewHeightWithLabels:(NSArray *)labels;
 @end

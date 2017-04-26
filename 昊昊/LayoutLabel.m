@@ -9,7 +9,7 @@
 #import "LayoutLabel.h"
 
 //标签间隔
-#define PADDING 10
+#define PADDING 5
 
 @interface LayoutLabel ()
 /**
@@ -113,10 +113,7 @@
  -- 3.如果累计未超出，则继续下次轮询。
  -- 顺带会计算出self的height。
  */
-- (CGFloat)resolvMetaData:(NSArray *)labels{
-    if (self.sizes.count) {
-        return 0.f;
-    }
+- (void)resolvMetaData:(NSArray *)labels{
     NSInteger i = 0;
     for (NSString *label in labels) {
         CGRect size = [label boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, _labelHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:_fontSize]} context:nil];
@@ -137,13 +134,14 @@
             if (sum > 0) {
                 [self.dataSource addObject:tmpArr.copy];
                 [self.dataSize addObject:tmpSizeArr.copy];
+                self_height += [self.sizes[i - 1] CGSizeValue].height + PADDING;
             }
             [self.dataSource addObject:@[labels[i]]];
             [self.dataSize addObject:@[self.sizes[i]]];
             sum = 0.f;
             [tmpArr removeAllObjects];
             [tmpSizeArr removeAllObjects];
-            self_height += [self.sizes[i] CGSizeValue].height;
+            self_height += [self.sizes[i] CGSizeValue].height + PADDING;
         }else{
             if (sum + PADDING + width > _Width) {
                 [self.dataSource addObject:tmpArr.copy];
@@ -151,36 +149,30 @@
                 sum = 0.f;
                 [tmpArr removeAllObjects];
                 [tmpSizeArr removeAllObjects];
-                self_height += [self.sizes[i] CGSizeValue].height;
+                self_height += [self.sizes[i - 1] CGSizeValue].height + PADDING;
                 if (i == self.sizes.count - 1) {
-                    [self.dataSource addObject:tmpArr.copy];
-                    [self.dataSize addObject:tmpSizeArr.copy];
+                    self_height += [self.sizes[i] CGSizeValue].height;
                     [self.dataSource addObject:@[labels[i]]];
                     [self.dataSize addObject:@[self.sizes[i]]];
                     break;
+                }else{
+                    sum += width + PADDING;
+                    [tmpArr addObject:labels[i]];
+                    [tmpSizeArr addObject:self.sizes[i]];
                 }
             }else{
                 sum += width + PADDING;
                 [tmpArr addObject:labels[i]];
                 [tmpSizeArr addObject:self.sizes[i]];
                 if (i == self.sizes.count - 1) {
+                    self_height += [self.sizes[i] CGSizeValue].height;
                     [self.dataSource addObject:tmpArr.copy];
                     [self.dataSize addObject:tmpSizeArr.copy];
                 }
             }
         }
     }
-    return self_height;
-}
-
-/**
- 计算所有内容经过算法之后的高度
- 
- @param labels labels
- @return self.height
- */
-- (CGFloat)getLayoutViewHeightWithLabels:(NSArray *)labels{
-    return [self resolvMetaData:labels];
+    self.height = self_height;
 }
 
 #pragma mark - Draw UI
