@@ -10,6 +10,8 @@
 
 //标签间隔
 #define PADDING 5
+#define TEXT_LABEL_TOP_PADDING 5
+#define TEXT_LABEL_LFT_PADDING 5
 
 @interface LayoutLabel ()
 /**
@@ -107,9 +109,9 @@
  -- 先对数据源进行宽高计算
  -- 拿到宽高之后，然后按顺序去判断
  -- 1.先判断拿到的数据是否超过给定的宽度，如果超过，直接占满一行，并自适应高度
-      并将此条信息加入到数据源中
+ 并将此条信息加入到数据源中
  -- 2.如果未超过给定宽度，则继续判断加上间隔（10px）以及累计宽度是否超出给定宽度
-      如果超出，则直接结束本次轮询。将累计信息加入数据源。
+ 如果超出，则直接结束本次轮询。将累计信息加入数据源。
  -- 3.如果累计未超出，则继续下次轮询。
  -- 顺带会计算出self的height。
  */
@@ -117,6 +119,8 @@
     NSInteger i = 0;
     for (NSString *label in labels) {
         CGRect size = [label boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, _labelHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:_fontSize]} context:nil];
+        size.size.height += TEXT_LABEL_TOP_PADDING * 2;
+        size.size.width  += TEXT_LABEL_LFT_PADDING * 2;
         if (size.size.width > _Width) {
             [self.allLineIndexs addObject:@(i)];
             size = [label boundingRectWithSize:CGSizeMake(_Width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:_fontSize]} context:nil];
@@ -192,7 +196,7 @@
             UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(x_offset, y_offset, [rows_size[j] CGSizeValue].width, [rows_size[j] CGSizeValue].height)];
             label.numberOfLines = 0;
             label.text = rows_data[j];
-            label.textAlignment = 0;
+            label.textAlignment = 1;
             label.font = [UIFont systemFontOfSize:_fontSize];
             label.textColor = _labelTextColor ? _labelTextColor:[UIColor blackColor];
             label.backgroundColor = _labelColor ? _labelColor:[UIColor whiteColor];
